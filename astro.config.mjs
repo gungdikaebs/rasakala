@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-	output: 'static',
+	output: "static",
 	vite: { plugins: [tailwindcss()] },
+	site: "https://gungdikaebs.github.io",
+	base: "/rasakala",
 });

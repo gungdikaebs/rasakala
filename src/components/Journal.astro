@@ -1,8 +1,9 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const stories = [
-	{ title: 'Cerita dari Kintamani', type: 'Asal biji', image: '/images/rasakala-exterior.webp', imageClass: 'object-[center_38%]', featured: true },
-	{ title: 'Behind the Bar', type: 'People', image: '/images/rasakala-hero.webp', imageClass: 'object-[68%_center]' },
-	{ title: 'Pagi yang Pelan', type: 'Ritual', image: '/images/kopi-kala.webp', imageClass: 'object-center' },
+	{ title: 'Cerita dari Kintamani', type: 'Asal biji', image: `${base}/images/rasakala-exterior.webp`, imageClass: 'object-[center_38%]', featured: true },
+	{ title: 'Behind the Bar', type: 'People', image: `${base}/images/rasakala-hero.webp`, imageClass: 'object-[68%_center]' },
+	{ title: 'Pagi yang Pelan', type: 'Ritual', image: `${base}/images/kopi-kala.webp`, imageClass: 'object-center' },
 ];
 ---
 
