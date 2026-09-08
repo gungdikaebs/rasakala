@@ -1,0 +1,26 @@
+---
+const stories = [
+	{ title: 'Cerita dari Kintamani', type: 'Asal biji', image: '/images/rasakala-exterior.webp', imageClass: 'object-[center_38%]', featured: true },
+	{ title: 'Behind the Bar', type: 'People', image: '/images/rasakala-hero.webp', imageClass: 'object-[68%_center]' },
+	{ title: 'Pagi yang Pelan', type: 'Ritual', image: '/images/kopi-kala.webp', imageClass: 'object-center' },
+];
+---
+
+<section class="bg-paper px-4 py-24 min-[801px]:px-(--page-gutter) min-[801px]:py-[clamp(6rem,10vw,10rem)]" id="journal" aria-labelledby="journal-heading">
+	<header class="mb-16 grid grid-cols-[1fr_auto] items-end gap-4 border-b border-espresso/20 pb-6 min-[801px]:grid-cols-[1fr_auto_1fr]">
+		<p class="row-start-2 text-[.66rem] font-semibold uppercase tracking-[.13em] min-[801px]:row-auto">04 — Notes from Rasakala</p>
+		<h2 class="col-span-2 row-start-1 font-display text-[clamp(4.5rem,8vw,8rem)] font-normal leading-[.75] tracking-[-.04em] min-[801px]:col-auto min-[801px]:row-auto" id="journal-heading">Journal</h2>
+		<a class="justify-self-end text-[.66rem] font-semibold uppercase tracking-[.13em] no-underline" href="#journal">Lihat semua <span aria-hidden="true">→</span></a>
+	</header>
+	<div class="grid grid-cols-1 items-start gap-5 min-[801px]:grid-cols-[1.35fr_.8fr_.8fr] min-[801px]:gap-[clamp(1.2rem,3vw,3rem)]">
+		{stories.map((story, index) => (
+			<article class:list={['mt-8 min-[801px]:mt-0', { 'min-[801px]:mt-28': index === 1, 'min-[801px]:mt-8': index === 2 }]} data-reveal>
+				<a class="no-underline" href="#journal" aria-label={`Baca ${story.title}`}>
+					<div class:list={['group overflow-hidden aspect-[4/3] min-[801px]:aspect-[4/5]', { 'min-[801px]:aspect-[5/4]': story.featured }]}><img class:list={['h-full w-full object-cover saturate-[.78] transition-transform duration-500 group-hover:scale-[1.025]', story.imageClass]} src={story.image} alt="" loading="lazy" /></div>
+					<p class="mb-2 mt-4 flex justify-between text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta"><span>{story.type}</span><span>0{index + 1}</span></p>
+					<h3 class="font-display text-[clamp(1.8rem,3.2vw,3.5rem)] font-normal leading-[.95]">{story.title}</h3>
+				</a>
+			</article>
+		))}
+	</div>
+</section>

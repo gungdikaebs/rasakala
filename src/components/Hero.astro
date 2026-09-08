@@ -1,0 +1,250 @@
+<section
+  class="relative isolate flex min-h-svh overflow-hidden bg-espresso text-[#f7efe0]"
+  id="home"
+  data-hero
+>
+  <!-- BACKGROUND -->
+  <div
+    class="hero-photo absolute inset-0 -z-30 scale-[1.03] max-[800px]:bg-[position:61%_center]"
+    data-hero-media
+    aria-hidden="true"
+  >
+  </div>
+
+  <div
+    class="hero-shade absolute inset-0 -z-20
+		max-[800px]:bg-[linear-gradient(90deg,rgba(18,15,11,.78),rgba(18,15,11,.12)),linear-gradient(0deg,rgba(18,15,11,.82)_0%,rgba(18,15,11,.15)_68%,transparent_100%)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div
+    class="film-grain pointer-events-none absolute inset-0 -z-10 opacity-10"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div
+    class="mx-auto
+			flex
+			w-full
+			max-w-[98rem]
+			flex-1
+			items-center
+			px-5
+			pb-12
+			pt-24
+			min-[801px]:px-[clamp(4rem,7vw,7rem)]
+			min-[801px]:pb-16
+			min-[801px]:pt-28"
+    id="main-content"
+  >
+    <div
+      class="w-full
+				max-w-[36rem]
+				translate-y-[2vh]
+				min-[801px]:w-[min(46rem,52vw)]
+				min-[801px]:max-w-none
+				min-[801px]:translate-y-[1vh]"
+    >
+      <!-- EYEBROW -->
+      <p
+        class="mb-5
+					ml-1
+					text-[.66rem]
+					font-semibold
+					uppercase
+					tracking-[.17em]
+					text-[#f7efe0]/90"
+        data-hero-reveal
+      >
+        Coffee shop · Denpasar, Bali
+      </p>
+
+      <!-- TITLE -->
+      <h1
+        class="flex
+					w-fit
+					flex-col
+					overflow-visible
+					px-[.08em]
+					font-display
+					font-normal
+					leading-[.69]
+					tracking-[-.045em]
+					text-[clamp(10rem,22vw,12rem)]"
+        aria-label="Rasakala"
+        data-hero-title
+      >
+        <span class="block"> Rasa </span>
+
+        <span class="ml-[.3em] block italic"> kala. </span>
+      </h1>
+
+      <!-- BODY COPY -->
+      <p
+        class="ml-1
+					mt-4
+					max-w-[29rem]
+					text-[.8rem]
+					leading-[1.65]
+					tracking-[.01em]
+					text-[#f7efe0]/85
+					min-[801px]:text-[clamp(.85rem,1vw,.95rem)]"
+        data-hero-reveal
+      >
+        Kopi, cerita, dan manusia baik.
+        <br />
+        Dari Bali, untuk tiap momen yang berarti.
+      </p>
+
+      <!-- ACTIONS -->
+      <div class="ml-1
+					mt-7
+					flex
+					flex-wrap
+					items-center
+					gap-6" data-hero-reveal>
+        <a
+          class="inline-flex
+						min-w-56
+						items-center
+						justify-between
+						gap-10
+						bg-paper
+						px-5
+						py-4
+						text-xs
+						font-semibold
+						uppercase
+						tracking-[.09em]
+						text-espresso
+						transition-colors
+						duration-200
+						hover:bg-terracotta
+						hover:text-paper"
+          href="#menu"
+        >
+          <span>Explore our menu</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="#location"
+          class="border-b
+						border-white/50
+						pb-1
+						text-[.7rem]
+						font-semibold
+						uppercase
+						tracking-[.12em]
+						transition-opacity
+						duration-200
+						hover:opacity-60"
+        >
+          Visit us ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANNOTATION TOP RIGHT -->
+  <div
+    class="absolute
+			right-5
+			top-[18%]
+			flex
+			rotate-3
+			items-center
+			gap-3
+			font-display
+			text-sm
+			italic
+			leading-none
+			min-[801px]:right-[clamp(2rem,6vw,7rem)]
+			min-[801px]:top-[21%]
+			min-[801px]:text-base"
+    data-annotation
+  >
+    <svg
+      class="w-7 fill-none stroke-current stroke-[1] min-[801px]:w-8"
+      viewBox="0 0 44 44"
+      aria-hidden="true"
+    >
+      <circle cx="22" cy="22" r="8"></circle>
+
+      <path
+        d="M22 1v10
+				M22 33v10
+				M1 22h10
+				M33 22h10
+				M7.2 7.2l7 7
+				M29.8 29.8l7 7
+				M36.8 7.2l-7 7
+				M14.2 29.8l-7 7"
+      ></path>
+    </svg>
+
+    <span>
+      Bali brews
+      <br />
+      brighter days.
+    </span>
+  </div>
+
+  <!-- ANNOTATION LOWER -->
+  <p
+    class="absolute
+			bottom-[18%]
+			right-[25%]
+			hidden
+			-rotate-6
+			font-display
+			text-base
+			italic
+			leading-none
+			min-[801px]:block"
+    data-annotation
+  >
+    good coffee
+    <br />
+    brings good people
+  </p>
+
+  <!-- SCROLL CUE -->
+  <div
+    class="absolute
+			bottom-24
+			right-5
+			hidden
+			origin-right-bottom
+			rotate-90
+			translate-x-full
+			items-center
+			gap-3
+			text-[.59rem]
+			font-semibold
+			uppercase
+			tracking-[.14em]
+			min-[801px]:flex"
+    aria-hidden="true"
+  >
+    <span>Scroll to wander</span>
+
+    <i class="block h-px w-12 bg-current"></i>
+  </div>
+
+  <!-- TRANSITION -->
+  <div
+    class="torn-edge
+			absolute
+			-bottom-px
+			-left-[1%]
+			right-[-1%]
+			h-[18px]
+			bg-paper"
+    aria-hidden="true"
+  >
+  </div>
+</section>

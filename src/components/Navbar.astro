@@ -1,0 +1,110 @@
+---
+import BrandMark from "./BrandMark.astro";
+const links = [
+  { label: "Home", href: "#home" },
+  { label: "Story", href: "#story" },
+  { label: "Menu", href: "#menu" },
+  { label: "Location", href: "#location" },
+  { label: "Journal", href: "#journal" },
+];
+---
+
+<header
+  class="group fixed inset-x-0 top-0 z-50 text-[#f8f0e1] transition-[color,background-color,box-shadow] duration-300 data-[scrolled=true]:data-[open=false]:bg-paper data-[scrolled=true]:data-[open=false]:text-espresso data-[scrolled=true]:data-[open=false]:shadow-[0_1px_0_rgba(36,27,20,.14)] data-[open=true]:bg-espresso data-[open=true]:text-paper"
+  data-header
+  data-open="false"
+  data-scrolled="false"
+>
+  <nav
+    class="mx-auto grid w-full max-w-[98rem] grid-cols-[1fr_auto] items-center border-b border-[#f8f0e152] px-4 py-4 transition-colors group-data-[scrolled=true]:group-data-[open=false]:border-espresso/20 group-data-[open=true]:border-paper/20 min-[801px]:grid-cols-[1fr_auto_1fr] min-[801px]:px-(--page-gutter) min-[801px]:py-[1.1rem]"
+    aria-label="Navigasi utama"
+  >
+    <a
+      class="no-underline"
+      href="#home"
+      aria-label="Rasakala — kembali ke beranda"><BrandMark /></a
+    >
+    <div
+      class="hidden items-center gap-[clamp(1.3rem,2vw,2.6rem)] text-[.73rem] font-semibold uppercase tracking-[.09em] min-[801px]:flex"
+    >
+      {
+        links.map((link) => (
+          <a
+            class="relative py-2 no-underline after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-right after:scale-x-0 after:bg-current after:transition-transform hover:after:origin-left hover:after:scale-x-100"
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+    <a
+      class="hidden items-center justify-self-end gap-6 border border-current/50 px-4 py-3 text-xs font-semibold uppercase tracking-[.08em] no-underline transition-colors hover:bg-espresso hover:text-paper min-[801px]:inline-flex"
+      href="#location"><span>Visit Us</span><span aria-hidden="true">↗</span></a
+    >
+    <button
+      class="grid h-11 w-11 justify-self-end gap-1.5 border border-current/50 bg-transparent px-2.5 py-3.5 text-current min-[801px]:hidden [&>span:not(.sr-only)]:block [&>span:not(.sr-only)]:h-px [&>span:not(.sr-only)]:bg-current [&>span:not(.sr-only)]:transition-transform group-data-[open=true]:[&>span:nth-of-type(2)]:translate-y-[3.5px] group-data-[open=true]:[&>span:nth-of-type(2)]:rotate-45 group-data-[open=true]:[&>span:nth-of-type(3)]:-translate-y-[3.5px] group-data-[open=true]:[&>span:nth-of-type(3)]:-rotate-45"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Buka menu</span><span></span><span></span>
+    </button>
+  </nav>
+  <div
+    class="pointer-events-none fixed inset-0 grid bg-espresso px-5 pb-8 pt-28 text-paper opacity-0 transition-opacity group-data-[open=true]:pointer-events-auto group-data-[open=true]:opacity-100 min-[801px]:hidden"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+    <div class="flex w-full flex-col">
+      <p class="mb-4 text-[.7rem] uppercase tracking-[.14em] text-paper/60">
+        Explore Rasakala
+      </p>
+      {
+        links.map((link, index) => (
+          <a
+            class="flex items-baseline gap-4 border-b border-paper/20 py-2 font-display text-[clamp(2.7rem,14vw,4.5rem)] leading-none text-paper no-underline transition-colors hover:text-sand active:text-sand"
+            href={link.href}
+          >
+            <span class="font-sans text-[.63rem] text-paper/55">0{index + 1}</span>
+            {link.label}
+          </a>
+        ))
+      }
+      <p
+        class="mt-auto text-right font-display text-[1.35rem] italic leading-[1.15] text-paper/70"
+      >
+        Secangkir rasa,<br />di tiap kala.
+      </p>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>("[data-header]");
+  const toggle = header?.querySelector<HTMLButtonElement>("button");
+  const menu = header?.querySelector<HTMLElement>("#mobile-menu");
+  const syncHeader = () => {
+    if (header) header.dataset.scrolled = String(window.scrollY > 24);
+  };
+  const setMenu = (open: boolean) => {
+    if (!header || !toggle || !menu) return;
+    header.dataset.open = String(open);
+    toggle.setAttribute("aria-expanded", String(open));
+    menu.setAttribute("aria-hidden", String(!open));
+    const label = toggle.querySelector(".sr-only");
+    if (label) label.textContent = open ? "Tutup menu" : "Buka menu";
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  toggle?.addEventListener("click", () =>
+    setMenu(toggle.getAttribute("aria-expanded") !== "true"),
+  );
+  menu
+    ?.querySelectorAll("a")
+    .forEach((link) => link.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenu(false);
+  });
+  window.addEventListener("scroll", syncHeader, { passive: true });
+  syncHeader();
+</script>
