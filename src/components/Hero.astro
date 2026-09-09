@@ -5,7 +5,7 @@
 >
   <!-- BACKGROUND -->
   <div
-    class="hero-photo absolute inset-0 -z-30 scale-[1.03] max-[800px]:bg-[position:61%_center]"
+    class="hero-photo absolute inset-[-24%_0] h-[148%] w-full -z-30 scale-110 will-change-transform max-[800px]:bg-[position:61%_center]"
     style={`background-image: url('${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/rasakala-hero.webp')`}
     data-hero-media
     aria-hidden="true"
@@ -47,7 +47,9 @@
 				translate-y-[2vh]
 				min-[801px]:w-[min(46rem,52vw)]
 				min-[801px]:max-w-none
-				min-[801px]:translate-y-[1vh]"
+				min-[801px]:translate-y-[1vh]
+				will-change-transform"
+      data-hero-content
     >
       <!-- EYEBROW -->
       <p
@@ -68,19 +70,23 @@
         class="flex
 					w-fit
 					flex-col
-					overflow-visible
+					overflow-hidden
 					px-[.08em]
 					font-display
 					font-normal
-					leading-[.69]
+					leading-[.72]
 					tracking-[-.045em]
 					text-[clamp(10rem,22vw,12rem)]"
         aria-label="Rasakala"
         data-hero-title
       >
-        <span class="block"> Rasa </span>
+        <span class="block overflow-hidden py-1">
+          <span class="block will-change-transform" data-hero-word> Rasa </span>
+        </span>
 
-        <span class="ml-[.3em] block italic"> kala. </span>
+        <span class="ml-[.3em] block italic overflow-hidden py-1">
+          <span class="block will-change-transform" data-hero-word> kala. </span>
+        </span>
       </h1>
 
       <!-- BODY COPY -->
@@ -167,6 +173,7 @@
 			min-[801px]:top-[21%]
 			min-[801px]:text-base"
     data-annotation
+    data-hero-badge
   >
     <svg
       class="w-7 fill-none stroke-current stroke-[1] min-[801px]:w-8"
@@ -207,6 +214,7 @@
 			leading-none
 			min-[801px]:block"
     data-annotation
+    data-hero-quote
   >
     good coffee
     <br />
@@ -229,6 +237,7 @@
 			uppercase
 			tracking-[.14em]
 			min-[801px]:flex"
+    data-hero-cue
     aria-hidden="true"
   >
     <span>Scroll to wander</span>

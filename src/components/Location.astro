@@ -1,16 +1,72 @@
-<section class="grid min-h-[85vh] grid-cols-1 bg-[#dad0bd] min-[801px]:grid-cols-[.9fr_1.1fr]" id="location" aria-labelledby="location-heading">
-	<div class="flex flex-col justify-center px-4 py-24 min-[801px]:px-(--page-gutter) min-[801px]:py-[clamp(5rem,8vw,9rem)]" data-reveal>
-		<p class="mb-8 text-[.66rem] font-semibold uppercase tracking-[.13em]">03 — Come by</p>
-		<h2 class="mb-16 font-display text-[clamp(4rem,7vw,7.2rem)] font-normal leading-[.84] tracking-[-.045em]" id="location-heading">Temui kami<br /><em class="font-normal">di Denpasar.</em></h2>
-		<div class="mb-12 grid grid-cols-1 gap-8 border-t border-espresso/20 pt-6 min-[801px]:grid-cols-2">
-			<div class="min-[801px]:row-span-2"><span class="mb-3 block text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta">Alamat</span><p class="text-sm leading-6 text-[#62594f]">Jl. Tukad Yeh Aya No. 18<br />Renon, Denpasar, Bali</p></div>
-			<div><span class="mb-3 block text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta">Buka setiap hari</span><p class="text-sm leading-6 text-[#62594f]">07.00 — 22.00 WITA</p></div>
-			<div><span class="mb-3 block text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta">Kontak</span><p class="text-sm leading-6 text-[#62594f]">hello@rasakala.coffee<br />+62 812 3456 7890</p></div>
-		</div>
-		<a class="flex w-full max-w-60 justify-between border-b border-current py-4 text-xs font-semibold uppercase tracking-[.12em] no-underline" href="https://maps.google.com/?q=Denpasar+Bali" target="_blank" rel="noreferrer">Get directions <span aria-hidden="true">↗</span></a>
-	</div>
-	<figure class="relative order-first m-0 min-h-[70vh] overflow-hidden min-[801px]:order-none min-[801px]:min-h-[42rem]" data-reveal>
-		<img class="h-full w-full object-cover saturate-[.84]" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/rasakala-exterior.webp`} alt="Eksterior Rasakala Coffee yang dikelilingi tanaman tropis" loading="lazy" width="1000" height="1250" />
-		<figcaption class="absolute bottom-6 right-6 bg-espresso px-3 py-2.5 text-[.63rem] uppercase tracking-[.12em] text-paper">Open daily · Come as you are</figcaption>
-	</figure>
+<section
+  class="grid min-h-[85vh] grid-cols-1 bg-[#dad0bd] min-[801px]:grid-cols-[.9fr_1.1fr]"
+  id="location"
+  aria-labelledby="location-heading"
+>
+  <div
+    class="flex flex-col justify-center px-4 py-24 min-[801px]:px-(--page-gutter) min-[801px]:py-[clamp(5rem,8vw,9rem)]"
+    data-reveal
+  >
+    <p class="mb-8 text-[.66rem] font-semibold uppercase tracking-[.13em]">
+      03 — Come by
+    </p>
+    <h2
+      class="mb-16 font-display text-[clamp(4rem,7vw,7.2rem)] font-normal leading-[.84] tracking-[-.045em]"
+      id="location-heading"
+    >
+      Temui kami<br /><em class="font-normal">di Denpasar.</em>
+    </h2>
+    <div
+      class="mb-12 grid grid-cols-1 gap-8 border-t border-espresso/20 pt-6 min-[801px]:grid-cols-2"
+    >
+      <div class="min-[801px]:row-span-2">
+        <span
+          class="mb-3 block text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta"
+          >Alamat</span
+        ><p class="text-sm leading-6 text-[#62594f]">
+          Jl. Gelogor Carik ...<br />Pemogan, Denpasar, Bali
+        </p>
+      </div>
+      <div>
+        <span
+          class="mb-3 block text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta"
+          >Buka setiap hari</span
+        ><p class="text-sm leading-6 text-[#62594f]">07.00 — 22.00 WITA</p>
+      </div>
+      <div>
+        <span
+          class="mb-3 block text-[.66rem] font-semibold uppercase tracking-[.13em] text-terracotta"
+          >Kontak</span
+        ><p class="text-sm leading-6 text-[#62594f]">
+          hello@rasakala.coffee<br />+62 812 3456 7890
+        </p>
+      </div>
+    </div>
+    <a
+      class="flex w-full max-w-60 justify-between border-b border-current py-4 text-xs font-semibold uppercase tracking-[.12em] no-underline"
+      href="https://maps.google.com/?q=Denpasar+Bali"
+      target="_blank"
+      rel="noreferrer">Get directions <span aria-hidden="true">↗</span></a
+    >
+  </div>
+  <figure
+    class="relative order-first m-0 min-h-[70vh] overflow-hidden min-[801px]:order-none min-[801px]:min-h-[42rem]"
+    data-location-figure
+    data-reveal
+  >
+    <img
+      class="relative -top-[12%] h-[124%] w-full object-cover saturate-[.84] will-change-transform"
+      data-location-img
+      src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/rasakala-exterior.webp`}
+      alt="Eksterior Rasakala Coffee yang dikelilingi tanaman tropis"
+      loading="lazy"
+      width="1000"
+      height="1250"
+    />
+    <figcaption
+      class="absolute bottom-6 right-6 bg-espresso px-3 py-2.5 text-[.63rem] uppercase tracking-[.12em] text-paper z-10"
+    >
+      Open daily · Come as you are
+    </figcaption>
+  </figure>
 </section>
